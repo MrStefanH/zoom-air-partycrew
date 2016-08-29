@@ -1,0 +1,28 @@
+html {
+    color: #fff;
+    display: table;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #191919;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+p {
+    margin: 0 auto;
+    width: 350px;
+    font-size: 1.2em;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}

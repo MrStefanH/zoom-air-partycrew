@@ -1,0 +1,21 @@
+/* The humans responsible & colophon
+humanstxt.org */
+
+[TEAM]
+
+Title: Web Developer
+Name: Stefan Holzschuh
+Contact: stefan.holzschuh [at] gmail.com
+Location: Germany
+
+[THANKS]
+
+# Names (& URL):
+
+[SITE]
+
+Last update: 2016/01/19
+Language: German
+Doctype: HTML5 with CSS3
+Components: Apache Server Configs, jQuery, Modernizr, Normalize.css
+IDE: Sublime Text
