@@ -323,6 +323,10 @@ main #members .title p, main #booking .title p {
 
 .teammember {
     opacity: 0;
+    width: 31.623931623931625%;
+    float: left;
+    margin-left: 2.564102564102564%;
+    margin-bottom: 2em;
 }
 
 .teammember.is-visible {
@@ -331,18 +335,12 @@ main #members .title p, main #booking .title p {
     -moz-animation: Teammembers 300ms ease-in forwards;
 }
 
-#fourthmember, #seventhmember {
+.teammember:first-child(1) {
+    margin-left: 0;
+}
+
+.teammember:nth-child(3n+1) {
     clear: both;
-}
-
-#firstmember, #secondmember, #thirdmember, #fourthmember, #fithmember, #sixthmember, #seventhmember {
-    width: 31.623931623931625%;
-    float: left;
-    margin-left: 2.564102564102564%;
-    margin-bottom: 2em;
-}
-
-#firstmember, #fourthmember, #seventhmember {
     margin-left: 0;
 }
 
