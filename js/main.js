@@ -1,3 +1,9 @@
+var app = angular.module('zapc', []);
+
+app.controller('zapc_footer', function(){
+    this.copyrightDate = new Date();
+});
+
 $( document ).ready(function() {
 
 	var lastId,
@@ -218,7 +224,6 @@ $( document ).ready(function() {
     });
 
     $('#members').bind('inview', function (event, visible) {
-        console.log('tes');
         if (visible === true) {
             $('.teammember').each(function(i){
                 setTimeout(function() {
