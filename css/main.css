@@ -321,6 +321,16 @@ main #members .title p, main #booking .title p {
     color: #61666c;
 }
 
+.teammember {
+    opacity: 0;
+}
+
+.teammember.is-visible {
+    animation: Teammembers 300ms ease-in forwards;
+    -webkit-animation: Teammembers 300ms ease-in forwards;
+    -moz-animation: Teammembers 300ms ease-in forwards;
+}
+
 #fourthmember, #seventhmember {
     clear: both;
 }
