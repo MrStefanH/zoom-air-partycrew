@@ -217,68 +217,20 @@ $( document ).ready(function() {
         hideText: 'Close'
     });
 
+    $('.team').bind('inview', function (event, visible) {
+        $('.teammember').each(function(i){
+            setTimeout(function() {
+                $('.teammember').eq(i).addClass('is-visible');
+            }, 400 * i);
+        });
+    });
+
 	//Animate thumbnails
     $('.thumbnail').bind('inview', function (event, visible) {
         if (visible == true) {
             $('.thumbnail').addClass("animated fadeInDown");
         } else {
             $('.thumbnail').removeClass("animated fadeInDown");
-        }
-    });
-
-    $('#firstmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#firstmember').addClass("animated pulse");
-        } else {
-            $('#firstmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#secondmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#secondmember').addClass("animated pulse");
-        } else {
-            $('#secondmember').removeClass("animated pulse");
-        }
-    });
-
-	$('#thirdmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#thirdmember').addClass("animated pulse");
-        } else {
-            $('#thirdmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#fourthmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#fourthmember').addClass("animated pulse");
-        } else {
-            $('#fourthmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#fithmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#fithmember').addClass("animated pulse");
-        } else {
-            $('#fithmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#sixthmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#sixthmember').addClass("animated pulse");
-        } else {
-            $('#sixthmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#seventhmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#seventhmember').addClass("animated pulse");
-        } else {
-            $('#seventhmember').removeClass("animated pulse");
         }
     });
 
