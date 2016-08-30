@@ -330,9 +330,9 @@ main #members .title p, main #booking .title p {
 }
 
 .teammember.is-visible {
-    animation: Teammembers 300ms ease-in forwards;
-    -webkit-animation: Teammembers 300ms ease-in forwards;
-    -moz-animation: Teammembers 300ms ease-in forwards;
+    animation: Teammembers 600ms ease-in forwards;
+    -webkit-animation: Teammembers 600ms ease-in forwards;
+    -moz-animation: Teammembers 600ms ease-in forwards;
 }
 
 .teammember:first-child(1) {
@@ -1177,6 +1177,13 @@ main #contact, main #pics, #gigs {
 @-webkit-keyframes Teammembers {
     0% {
         opacity: 0;
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    90% {
+        transform: scale(0.9);
     }
     100% {
         opacity: 1;
@@ -1186,6 +1193,13 @@ main #contact, main #pics, #gigs {
 @-moz-keyframes Teammembers {
     0% {
         opacity: 0;
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    90% {
+        transform: scale(0.9);
     }
     100% {
         opacity: 1;
@@ -1195,7 +1209,13 @@ main #contact, main #pics, #gigs {
 @keyframes Teammembers {
     0% {
         opacity: 0;
-        transform: scale(0.3);
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    90% {
+        transform: scale(0.9);
     }
     100% {
         opacity: 1;
