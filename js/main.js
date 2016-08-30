@@ -69,7 +69,7 @@ $( document ).ready(function() {
             // Set/remove active class
             menuItems
             .parent().removeClass("active")
-            .end().filter("[href=#" + id + "]").parent().addClass("active");
+            .end().filter("[href=\\#" + id + "]").parent().addClass("active");
         }
 	});
 
@@ -84,7 +84,7 @@ $( document ).ready(function() {
         return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
     }
 
-    $('a[href*=#]').each(function () {
+    $('a[href*=\\#]').each(function () {
         if (filterPath(location.pathname) == filterPath(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
             var $targetId = $(this.hash),
             $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
@@ -218,6 +218,7 @@ $( document ).ready(function() {
     });
 
     $('#members').bind('inview', function (event, visible) {
+        console.log('tes');
         if (visible === true) {
             $('.teammember').each(function(i){
                 setTimeout(function() {
