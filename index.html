@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="de">
+<html class="no-js" lang="de" ng-app="zapc">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -453,7 +453,7 @@
             </section>
         </main>
 
-        <footer id="main-footer" class="container">
+        <footer id="main-footer" class="container" ng-controller="zapc_footer as footer">
             <div class="social-title">
                 <h3>
                     Vernetz dich mit uns
@@ -471,7 +471,7 @@
                     </a>
                 </li>
             </ul>
-            &copy; 2016 Zoom Air Partycrew
+            &copy; {{footer.copyrightDate | date:'yyyy'}} Zoom Air Partycrew
             <nav>
                 <ul>
                     <li><a href="impressum.html#impressum" title="Zoom Air Partycrew Impressum">Impressum</a></li>
@@ -490,6 +490,7 @@
 
         <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/vendor/jquery.inview.js"></script>
         <script src="js/vendor/jquery.mixitup.js"></script>
