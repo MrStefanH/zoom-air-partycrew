@@ -217,7 +217,7 @@ $( document ).ready(function() {
         hideText: 'Close'
     });
 
-    $('.team').bind('inview', function (event, visible) {
+    $('#members').bind('inview', function (event, visible) {
         if (visible === true) {
             $('.teammember').each(function(i){
                 setTimeout(function() {
