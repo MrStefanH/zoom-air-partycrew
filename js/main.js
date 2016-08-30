@@ -218,11 +218,17 @@ $( document ).ready(function() {
     });
 
     $('.team').bind('inview', function (event, visible) {
-        $('.teammember').each(function(i){
-            setTimeout(function() {
-                $('.teammember').eq(i).addClass('is-visible');
-            }, 400 * i);
-        });
+        if (visible === true) {
+            $('.teammember').each(function(i){
+                setTimeout(function() {
+                    $('.teammember').eq(i).addClass('is-visible');
+                }, 400 * i);
+            });
+        } else {
+            $('.teammember').each(function(i){
+                $('.teammember').eq(i).removeClass('is-visible');
+            });
+        }
     });
 
     $('.contact-form').bind('inview', function (event, visible) {
