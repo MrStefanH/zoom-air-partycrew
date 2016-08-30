@@ -300,35 +300,6 @@ body {
     animation:bg linear 20s infinite;
 }
 
-@-webkit-keyframes bg{
-    0%{
-        background-image: url('../img/vintage.jpg');
-    }
-    50%{
-        background-image:url('../img/pexels.jpg');
-    }
-    75%{
-        background-image:url('../img/zapc3D.jpg');
-    }
-    100%{
-        background-image:url('../img/vintage.jpg');
-    }
-}
-@keyframes bg{
-    0%{
-        background-image: url('../img/vintage.jpg');
-    }
-    50%{
-        background-image:url('../img/pexels.jpg');
-    }
-    75%{
-        background-image:url('../img/zapc3D.jpg');
-    }
-    100%{
-        background-image:url('../img/vintage.jpg');
-    }
-}
-
 main {
     background-color: #191919;
     position: relative;
@@ -1145,6 +1116,81 @@ main #contact, main #pics, #gigs {
 
     #main-footer {
         padding: 4em 0em;
+    }
+}
+
+/* ANIMATIONS */
+
+@-webkit-keyframes bg{
+    0%{
+        background-image: url('../img/vintage.jpg');
+    }
+    50%{
+        background-image:url('../img/pexels.jpg');
+    }
+    75%{
+        background-image:url('../img/zapc3D.jpg');
+    }
+    100%{
+        background-image:url('../img/vintage.jpg');
+    }
+}
+
+@-moz-keyframes bg{
+    0%{
+        background-image: url('../img/vintage.jpg');
+    }
+    50%{
+        background-image:url('../img/pexels.jpg');
+    }
+    75%{
+        background-image:url('../img/zapc3D.jpg');
+    }
+    100%{
+        background-image:url('../img/vintage.jpg');
+    }
+}
+
+@keyframes bg{
+    0%{
+        background-image: url('../img/vintage.jpg');
+    }
+    50%{
+        background-image:url('../img/pexels.jpg');
+    }
+    75%{
+        background-image:url('../img/zapc3D.jpg');
+    }
+    100%{
+        background-image:url('../img/vintage.jpg');
+    }
+}
+
+@-webkit-keyframes Teammembers {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes Teammembers {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes Teammembers {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    100% {
+        opacity: 1;
     }
 }
 
