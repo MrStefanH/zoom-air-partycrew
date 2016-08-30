@@ -225,15 +225,6 @@ $( document ).ready(function() {
         });
     });
 
-	//Animate thumbnails
-    $('.thumbnail').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('.thumbnail').addClass("animated fadeInDown");
-        } else {
-            $('.thumbnail').removeClass("animated fadeInDown");
-        }
-    });
-
     $('.contact-form').bind('inview', function (event, visible) {
         if (visible === true) {
             $('.contact-form').addClass("animated bounceIn");
