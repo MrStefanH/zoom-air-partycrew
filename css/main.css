@@ -300,35 +300,6 @@ body {
     animation:bg linear 20s infinite;
 }
 
-@-webkit-keyframes bg{
-    0%{
-        background-image: url('../img/vintage.jpg');
-    }
-    50%{
-        background-image:url('../img/pexels.jpg');
-    }
-    75%{
-        background-image:url('../img/zapc3D.jpg');
-    }
-    100%{
-        background-image:url('../img/vintage.jpg');
-    }
-}
-@keyframes bg{
-    0%{
-        background-image: url('../img/vintage.jpg');
-    }
-    50%{
-        background-image:url('../img/pexels.jpg');
-    }
-    75%{
-        background-image:url('../img/zapc3D.jpg');
-    }
-    100%{
-        background-image:url('../img/vintage.jpg');
-    }
-}
-
 main {
     background-color: #191919;
     position: relative;
@@ -350,18 +321,26 @@ main #members .title p, main #booking .title p {
     color: #61666c;
 }
 
-#fourthmember, #seventhmember {
-    clear: both;
-}
-
-#firstmember, #secondmember, #thirdmember, #fourthmember, #fithmember, #sixthmember, #seventhmember {
+.teammember {
+    opacity: 0;
     width: 31.623931623931625%;
     float: left;
     margin-left: 2.564102564102564%;
     margin-bottom: 2em;
 }
 
-#firstmember, #fourthmember, #seventhmember {
+.teammember.is-visible {
+    animation: Teammembers 600ms ease-in forwards;
+    -webkit-animation: Teammembers 600ms ease-in forwards;
+    -moz-animation: Teammembers 600ms ease-in forwards;
+}
+
+.teammember:first-child(1) {
+    margin-left: 0;
+}
+
+.teammember:nth-child(3n+1) {
+    clear: both;
     margin-left: 0;
 }
 
@@ -1145,6 +1124,101 @@ main #contact, main #pics, #gigs {
 
     #main-footer {
         padding: 4em 0em;
+    }
+}
+
+/* ANIMATIONS */
+
+@-webkit-keyframes bg{
+    0%{
+        background-image: url('../img/vintage.jpg');
+    }
+    50%{
+        background-image:url('../img/pexels.jpg');
+    }
+    75%{
+        background-image:url('../img/zapc3D.jpg');
+    }
+    100%{
+        background-image:url('../img/vintage.jpg');
+    }
+}
+
+@-moz-keyframes bg{
+    0%{
+        background-image: url('../img/vintage.jpg');
+    }
+    50%{
+        background-image:url('../img/pexels.jpg');
+    }
+    75%{
+        background-image:url('../img/zapc3D.jpg');
+    }
+    100%{
+        background-image:url('../img/vintage.jpg');
+    }
+}
+
+@keyframes bg{
+    0%{
+        background-image: url('../img/vintage.jpg');
+    }
+    50%{
+        background-image:url('../img/pexels.jpg');
+    }
+    75%{
+        background-image:url('../img/zapc3D.jpg');
+    }
+    100%{
+        background-image:url('../img/vintage.jpg');
+    }
+}
+
+@-webkit-keyframes Teammembers {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    90% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes Teammembers {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    90% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes Teammembers {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    90% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
     }
 }
 

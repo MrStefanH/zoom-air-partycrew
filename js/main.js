@@ -37,7 +37,7 @@ $( document ).ready(function() {
             $('#slider').css('height', '774px');
             $('#main-nav ul li a').addClass('bordertransparent');
             $('#main-nav ul li a').removeClass('bordernormal');
-        } else if ($(this).scrollTop() == 0) {
+        } else if ($(this).scrollTop() === 0) {
             $('#header-wrapper').removeClass('main-nav-top-fixed animated fadeInDown');
             $('#header-wrapper').addClass('animated fadeInUp');
             $('#main-nav').addClass('posabs');
@@ -133,7 +133,7 @@ $( document ).ready(function() {
 
 
         var comment = $('textarea#nachricht').val(); // get the value of the input field
-        if (comment == "" || comment == " ") {
+        if (comment === "" || comment == " ") {
             $('#err-nachricht').show(500);
             $('#err-nachricht').delay(4000);
             $('#err-nachricht').animate({
@@ -144,7 +144,7 @@ $( document ).ready(function() {
             error = true; // change the error state to true
         }
 
-        if (error == false) {
+        if (error === false) {
             var dataString = $('#contact-form').serialize(); // Collect data from form
             $.ajax({
                 type: "POST",
@@ -179,14 +179,14 @@ $( document ).ready(function() {
         return false; // stops user browser being directed to the php file
     });
 
-	//Initial mixitup, used for animated filtering portgolio.
+	// Initial mixitup, used for animated filtering portgolio.
     $('#gig-list').mixitup({
         'onMixStart': function (config) {
             $('div.toggleDiv').hide();
         }
     });
 
-	//Function for show or hide portfolio desctiption.
+	// Function for show or hide portfolio desctiption.
     $.fn.showHide = function (options) {
         var defaults = {
             speed: 1000,
@@ -217,68 +217,17 @@ $( document ).ready(function() {
         hideText: 'Close'
     });
 
-	//Animate thumbnails
-    $('.thumbnail').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('.thumbnail').addClass("animated fadeInDown");
+    $('#members').bind('inview', function (event, visible) {
+        if (visible === true) {
+            $('.teammember').each(function(i){
+                setTimeout(function() {
+                    $('.teammember').eq(i).addClass('is-visible');
+                }, 400 * i);
+            });
         } else {
-            $('.thumbnail').removeClass("animated fadeInDown");
-        }
-    });
-
-    $('#firstmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#firstmember').addClass("animated pulse");
-        } else {
-            $('#firstmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#secondmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#secondmember').addClass("animated pulse");
-        } else {
-            $('#secondmember').removeClass("animated pulse");
-        }
-    });
-
-	$('#thirdmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#thirdmember').addClass("animated pulse");
-        } else {
-            $('#thirdmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#fourthmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#fourthmember').addClass("animated pulse");
-        } else {
-            $('#fourthmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#fithmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#fithmember').addClass("animated pulse");
-        } else {
-            $('#fithmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#sixthmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#sixthmember').addClass("animated pulse");
-        } else {
-            $('#sixthmember').removeClass("animated pulse");
-        }
-    });
-
-    $('#seventhmember').bind('inview', function (event, visible) {
-        if (visible == true) {
-            $('#seventhmember').addClass("animated pulse");
-        } else {
-            $('#seventhmember').removeClass("animated pulse");
+            $('.teammember').each(function(i){
+                $('.teammember').eq(i).removeClass('is-visible');
+            });
         }
     });
 
@@ -291,11 +240,11 @@ $( document ).ready(function() {
     });
 });
 
-//Initialize google map for contact setion with your location.
+// Initialize google map for contact setion with your location.
 function initializeMap() {
 
-    var lat = '51.1958'; //Set your latitude.
-    var lon = '11.9849'; //Set your longitude.
+    var lat = '51.1958'; // Set your latitude.
+    var lon = '11.9849'; // Set your longitude.
 
     var centerLon = lon - 0.0405;
 
@@ -308,7 +257,7 @@ function initializeMap() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    //Bind map to elemet with id map-canvas
+    // Bind map to elemet with id map-canvas
     var map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
     var marker = new google.maps.Marker({
         map: map,
