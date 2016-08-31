@@ -4,6 +4,12 @@ app.controller('zapc_footer', function(){
     this.copyrightDate = new Date();
 });
 
+app.controller('zapc_members', function($scope, $http){
+    $http.get('php/members.php').then(function(response){
+        $scope.members = response.data.records;
+    });
+});
+
 $( document ).ready(function() {
 
 	var lastId,
