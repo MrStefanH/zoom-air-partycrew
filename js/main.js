@@ -1,4 +1,4 @@
-var app = angular.module('zapc', []);
+var app = angular.module('zapc', ['duScroll']);
 
 app.controller('zapc_footer', function(){
     this.copyrightDate = new Date();
@@ -9,6 +9,12 @@ app.controller('zapc_members',['$scope', '$http', function($scope, $http){
     $http.get('php/members.php').then(function(response){
         controller.members = response.data.records;
     });
+}]);
+
+app.controller('scrollTopController', ['$document', function($document){
+    this.scrollToTop = function(){
+        $document.scrollTopAnimated(0, 1200);
+    };
 }]);
 
 $( document ).ready(function() {
@@ -85,13 +91,6 @@ $( document ).ready(function() {
             .end().filter("[href=\\#" + id + "]").parent().addClass("active");
         }
 	});
-
-	$('.scrollup').click(function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 600);
-        return false;
-    });
 
     function filterPath(string) {
         return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
