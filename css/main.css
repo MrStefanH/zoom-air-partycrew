@@ -1042,7 +1042,7 @@ main #contact, main #pics, #gigs {
         transition: color 0.4s;
     }
 
-    #main-nav ul li:hover> a, #main-nav .active > a, #main-nav .active > a:hover, #main-nav .active > a:focus {
+    #main-nav ul li:hover> a, #main-nav a.active, #main-nav > a.active:hover, #main-nav > a.active:focus {
     border: 1px solid #ff0066;
     border-color: #ff0066;
     color: #ff0066;

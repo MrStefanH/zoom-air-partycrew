@@ -32,14 +32,14 @@
                     </a>
                 </h1>
 
-                <nav id="main-nav" class="posabs">
+                <nav id="main-nav" class="posabs" ng-controller="menuController as menuCtrl">
                     <ul id="top-navigation">
-                        <li class="active"><a href="#news" title="Zoom Air Partycrew Startseite" class="bordernormal">News</a></li>
-                        <li><a href="#gigs" title="Zoom Air Partycrew Gigs" class="bordernormal">Gigs</a></li>
-                        <li><a href="#members" title="Zoom Air Partycrew Mitglieder" class="bordernormal">Members</a></li>
-                        <li class="break"><a href="#pics" title="Zoom Air Partycrew Partybilder" class="bordernormal">Pics</a></li>
-                        <li><a href="#booking" title="Zoom Air Partycrew Booking" class="bordernormal">Booking</a></li>
-                        <li><a href="#contact" title="Zoom Air Partycrew Kontakt" class="bordernormal">Contact</a></li>
+                        <li ng-click="menuCtrl.scrollToElement(news)"><a href="#news" title="Zoom Air Partycrew Startseite" class="bordernormal" du-scrollspy>News</a></li>
+                        <li ng-click="menuCtrl.scrollToElement('gigs')"><a href="#gigs" title="Zoom Air Partycrew Gigs" class="bordernormal" du-scrollspy>Gigs</a></li>
+                        <li ng-click="menuCtrl.scrollToElement('members')"><a href="#members" title="Zoom Air Partycrew Mitglieder" class="bordernormal" du-scrollspy>Members</a></li>
+                        <li ng-click="menuCtrl.scrollToElement('pics')" class="break"><a href="#pics" title="Zoom Air Partycrew Partybilder" class="bordernormal" du-scrollspy>Pics</a></li>
+                        <li ng-click="menuCtrl.scrollToElement('booking')"><a href="#booking" title="Zoom Air Partycrew Booking" class="bordernormal" du-scrollspy>Booking</a></li>
+                        <li ng-click="menuCtrl.scrollToElement('contact')"><a href="#contact" title="Zoom Air Partycrew Kontakt" class="bordernormal" du-scrollspy>Contact</a></li>
                     </ul>
                 </nav>
             </section>
@@ -56,10 +56,6 @@
         </section>
 
         <main>
-            <section id="news">
-
-            </section>
-
             <section id="gigs">
                 <div class='container'>
                     <div class="title">

@@ -1,4 +1,5 @@
 var app = angular.module('zapc', ['duScroll']);
+app.value('duScrollOffset', 125);
 
 app.controller('zapc_footer', function(){
     this.copyrightDate = new Date();
@@ -19,26 +20,14 @@ app.controller('scrollTopController', ['$document', function($document){
     };
 }]);
 
+app.controller('menuController', ['$document', function($document){
+    this.scrollToElement = function(id){
+        var element = angular.element(document.getElementById(id));
+        $document.scrollToElementAnimated(element, 125, 1200);
+    };
+}]);
+
 $( document ).ready(function() {
-
-	var lastId,
-    topMenu = $("#top-navigation"),
-    topMenuHeight = topMenu.outerHeight(),
-        // All list items
-        menuItems = topMenu.find("a"),
-        // Anchors corresponding to menu items
-        scrollItems = menuItems.map(function () {
-            var href = $(this).attr("href");
-
-            if(href.indexOf("#") === 0){
-                var item = $($(this).attr("href"));
-                if (item.length) {
-
-                    return item;
-                }
-            }
-        });
-
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 50) {
             $('.scrollup').fadeIn();
@@ -71,51 +60,7 @@ $( document ).ready(function() {
             $('#main-nav ul li a').removeClass('bordertransparent');
             $('#main-nav ul li a').addClass('bordernormal');
         }
-
-		// Get container scroll position
-        var fromTop = $(this).scrollTop() + topMenuHeight + 10;
-
-		// Get id of current scroll item
-        var cur = scrollItems.map(function () {
-            if (($(this).offset().top -130) < fromTop)
-                return this;
-        });
-
-        // Get the id of the current element
-        cur = cur[cur.length - 1];
-        var id = cur && cur.length ? cur[0].id : "";
-
-        if (lastId !== id) {
-            lastId = id;
-            // Set/remove active class
-            menuItems
-            .parent().removeClass("active")
-            .end().filter("[href=\\#" + id + "]").parent().addClass("active");
-        }
 	});
-
-    function filterPath(string) {
-        return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
-    }
-
-    $('a[href*=\\#]').each(function () {
-        if (filterPath(location.pathname) == filterPath(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
-            var $targetId = $(this.hash),
-            $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
-            var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
-
-            if ($target) {
-
-                $(this).click(function () {
-                    var targetOffset = $target.offset().top - 130;
-                    $('html, body').animate({
-                        scrollTop: targetOffset
-                    }, 800);
-                    return false;
-                });
-            }
-        }
-    });
 
 	$("#send-mail").click(function () {
 
