@@ -577,6 +577,7 @@ main #members .thumbnail .mask h4 {
     font-weight: 700;
     letter-spacing: 0.10em;
     font-size: 1.1em;
+    white-space: pre;
 }
 
 main #members .thumbnail .mask p {
