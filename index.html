@@ -241,136 +241,31 @@
                         <h1>Wer sind wir?</h1>
                         <p>Unsere Mitglieder bestehen überwiegend aus regional bekannten DJs. Viele Helfer und Partner stehen uns jederzeit zur Seite um unsere Veranstaltungen zu einem Highlight zu machen.</p>
                     </div>
-                    <div class="team">
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/sage.jpg" alt="SAGE" />
-                                <h3>SAGE</h3>
+                    <div class="team" ng-controller="zapc_members as zpacmembers">
+                        <div class="teammember" ng-repeat="member in members">
+                            <div class="thumbnail" ng-if="member.bild">
+                                <img src="{{member.bild}}" alt="{{member.djname}}" />
+                                <h3>{{member.djname}}</h3>
                                 <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/mrdjsage2" target="_blank">
+                                    <li ng-if="member.facebook">
+                                        <a href="{{member.facebook}}" target="_blank">
                                             <span class="icon-facebook-circled"></span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="https://www.twitter.com/mrdjsage" target="_blank">
+                                    <li ng-if="member.twitter">
+                                        <a href="{{member.twitter}}" target="_blank">
                                             <span class="icon-twitter-circled"></span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="https://www.soundcloud.com/djsage" target="_blank">
+                                    <li ng-if="member.soundcloud">
+                                        <a href="{{member.soundcloud}}" target="_blank">
                                             <span class="icon-megaphone"></span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="mask">
-                                    <h4>House, Deep House,<br /> Tech House</h4>
-                                    <p>SAGE es mit Liebe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/row-c.jpg" alt="Row-C" />
-                                <h3>Row-C</h3>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/djrowc" target="_blank">
-                                            <span class="icon-facebook-circled"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.soundcloud.com/row-c" target="_blank">
-                                            <span class="icon-megaphone"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="mask">
-                                    <h4>House-, Black- <br/>& PartyBeats</h4>
-                                    <p>Hauptsache ihr habt Spaß<br />Egal ob House, Black oder Partybeats, ob auf einem großen Open-Air, in der Disco oder auf einer Hochzeit-Ich gebe immer Alles</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/ben-k.jpg" alt="Ben K" />
-                                <h3>Ben K</h3>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/benk.official" target="_blank">
-                                            <span class="icon-facebook-circled"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.soundcloud.com/bkwsf" target="_blank">
-                                            <span class="icon-megaphone"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="mask">
-                                    <h4>House , TechHouse <br /> Classic , Vocal</h4>
-                                    <p>mein HERZ zur House Musik</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/kitoming.jpg" alt="KiToming" />
-                                <h3>KiToming</h3>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.soundcloud.com/kitoming" target="_blank">
-                                            <span class="icon-megaphone"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="mask">
-                                    <h4>House , Classic, Electrohouse</h4>
-                                    <p>Clubklassiker at its best</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/hola.jpg" alt="HOLA" />
-                                <h3>HOLA</h3>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/st4ytun3d" target="_blank">
-                                            <span class="icon-facebook-circled"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="mask">
-                                    <h4>Techhouse , Minimal</h4>
-                                    <p>Techhouse und Techno mit südländischem, treibenden Flair. Groovt mit uns durch die Nächte.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/greeno.jpg" alt="Green-O" />
-                                <h3>Green-O</h3>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.soundcloud.com/dj_green-o" target="_blank">
-                                            <span class="icon-megaphone"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="mask">
-                                    <h4>House , Electro</h4>
-                                    <p>Große Musik für große Leute</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="teammember">
-                            <div class="thumbnail">
-                                <img src="img/seanp.jpg" alt="Sean Prèr" />
-                                <h3>Sean Prèr</h3>
-                                <div class="mask">
-                                    <h4>Tech House</h4>
-                                    <p>Perfektion bis ins Mark</p>
+                                    <h4>{{member.genre}}</h4>
+                                    <p>{{member.description}}</p>
                                 </div>
                             </div>
                         </div>
