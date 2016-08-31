@@ -12,6 +12,8 @@ app.controller('zapc_members',['$scope', '$http', function($scope, $http){
 }]);
 
 app.controller('scrollTopController', ['$document', function($document){
+    this.icon = 'icon-up-open';
+
     this.scrollToTop = function(){
         $document.scrollTopAnimated(0, 1200);
     };
