@@ -604,6 +604,7 @@ main #members .thumbnail:hover .social li a {
 
 main #members .thumbnail:hover .social li a:hover {
     color: #fff;
+    cursor: pointer;
 }
 
 main #members .about-text, .pics-text, .booking-text {
