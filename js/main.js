@@ -5,8 +5,9 @@ app.controller('zapc_footer', function(){
 });
 
 app.controller('zapc_members', function($scope, $http){
+    var controller = this;
     $http.get('php/members.php').then(function(response){
-        $scope.members = response.data.records;
+        controller.members = response.data.records;
     });
 });
 

@@ -242,7 +242,7 @@
                         <p>Unsere Mitglieder bestehen überwiegend aus regional bekannten DJs. Viele Helfer und Partner stehen uns jederzeit zur Seite um unsere Veranstaltungen zu einem Highlight zu machen.</p>
                     </div>
                     <div class="team" ng-controller="zapc_members as zpacmembers">
-                        <div class="teammember" ng-repeat="member in members">
+                        <div class="teammember" ng-repeat="member in zpacmembers.members">
                             <div class="thumbnail" ng-if="member.bild">
                                 <img src="{{member.bild}}" alt="{{member.djname}}" />
                                 <h3>{{member.djname}}</h3>
