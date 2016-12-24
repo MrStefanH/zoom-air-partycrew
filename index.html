@@ -2,10 +2,11 @@
 <html class="no-js" lang="de" ng-app="zapc">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Zoom Air Partycrew</title>
-        <meta name="description" content="Zoom Air Partycrew - Agentur und Eventmanagement">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Zoom Air Partycrew - Agentur und Eventmanagement">
+
+        <title>Zoom Air Partycrew</title>
 
         <link type="text/plain" rel="author" href="humans.txt" />
 
@@ -16,8 +17,8 @@
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/pluton.css" />
         <link rel="stylesheet" href="css/animate.css" />
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src='bower_components/recaptcha-ajax/recaptcha_ajax.js'></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -376,13 +377,12 @@
             <i class="{{scrollTopCtrl.icon}}" ng-click="scrollTopCtrl.scrollToTop();"></i>
         </div>
 
-        <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="bower_components/polyfills/polyfill.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="js/vendor/jquery.inview.js"></script>
-        <script src="js/vendor/jquery.mixitup.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/inview.js/inview.min.js"></script>
+        <script src="bower_components/mixitup/dist/mixitup.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script async="" defer="" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap"></script>
