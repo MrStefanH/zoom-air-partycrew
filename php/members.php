@@ -2,7 +2,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$connection = new mysqli("localhost", "zapcuser", ")EDa&Wd>~5L-,s<S", "zapc");
+$db_creds = unserialize(getenv('ZAPC_DB_Credentials'));
+
+$connection = new mysqli($db_creds['host'], $db_creds['username'], $db_creds['password'], $db_creds['database']);
 
 $result = $connection->query("SELECT * FROM Members");
 
