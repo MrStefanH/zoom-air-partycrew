@@ -138,13 +138,6 @@ $( document ).ready(function() {
         return false; // stops user browser being directed to the php file
     });
 
-	// Initial mixitup, used for animated filtering portgolio.
-    $('#gig-list').mixitup({
-        'onMixStart': function (config) {
-            $('div.toggleDiv').hide();
-        }
-    });
-
 	// Function for show or hide portfolio desctiption.
     $.fn.showHide = function (options) {
         var defaults = {
