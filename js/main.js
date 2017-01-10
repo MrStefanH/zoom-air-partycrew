@@ -181,7 +181,7 @@ $( document ).ready(function() {
 });
 
 // Initialize google map for contact setion with your location.
-function initializeMap() {
+function initMap() {
 
     var lat = '51.1958'; // Set your latitude.
     var lon = '11.9849'; // Set your longitude.
