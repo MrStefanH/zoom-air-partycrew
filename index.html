@@ -78,7 +78,7 @@
 
                         <div ng-repeat="gig in zapcgigs.gigs" id="slidingDiv{{gig.id}}" class="singleGig">
                             <div class="gigpic">
-                                <img src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
+                                <img ng-src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
                             </div>
                             <div class="gigtext">
                                 <div class="description">
@@ -107,7 +107,7 @@
                         <ul class="thumbnails" id="gig-list">
                             <li ng-repeat="gig in zapcgigs.gigs | filter:filters">
                                 <div class="thumbnail animated fadeInDown">
-                                    <img src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
+                                    <img ng-src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
                                     <a href="" ng-click="zapcgigs.showHide('slidingDiv'+gig.id)" class="more"">
                                         <i class="icon-plus"></i>
                                     </a>
@@ -130,7 +130,7 @@
                     <div class="team" ng-controller="zapc_members as zpacmembers">
                         <div class="teammember" ng-repeat="member in zpacmembers.members">
                             <div class="thumbnail" ng-if="member.bild">
-                                <img src="{{member.bild}}" alt="{{member.djname}}" />
+                                <img ng-src="{{member.bild}}" alt="{{member.djname}}" />
                                 <h3>{{member.djname}}</h3>
                                 <ul class="social">
                                     <li ng-if="member.facebook">
