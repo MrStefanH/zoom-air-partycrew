@@ -17,6 +17,18 @@ app.controller('zapc_gigs',['$scope', '$http', function($scope, $http){
     $http.get('php/gigs.php').then(function(response){
         controller.gigs = response.data.records;
     });
+
+    this.showHide = function (element,options) {
+        var defaults = {
+            speed: 500,
+            easing: '',
+            changeText: 0,
+            showText: 'View',
+            hideText: 'Close'
+        };
+        var options = $.extend(defaults, options);
+        $('#' + element).slideToggle(options.speed, options.easing);
+    };
 }]);
 
 app.controller('scrollTopController', ['$document', function($document){
@@ -143,37 +155,6 @@ $( document ).ready(function() {
         }
 
         return false; // stops user browser being directed to the php file
-    });
-
-	// Function for show or hide portfolio desctiption.
-    $.fn.showHide = function (options) {
-        var defaults = {
-            speed: 1000,
-            easing: '',
-            changeText: 0,
-            showText: 'Show',
-            hideText: 'Hide'
-        };
-        var options = $.extend(defaults, options);
-        $(this).click(function () {
-            $('.toggleDiv').slideUp(options.speed, options.easing);
-            var toggleClick = $(this);
-            var toggleDiv = $(this).attr('rel');
-            $(toggleDiv).slideToggle(options.speed, options.easing, function () {
-                if (options.changeText == 1) {
-                    $(toggleDiv).is(":visible") ? toggleClick.text(options.hideText) : toggleClick.text(options.showText);
-                }
-            });
-            return false;
-        });
-    };
-
-	$('div.toggleDiv').hide();
-	$('.show_hide').showHide({
-        speed: 500,
-        changeText: 0,
-        showText: 'View',
-        hideText: 'Close'
     });
 
     $('#members').bind('inview', function (event, visible) {
