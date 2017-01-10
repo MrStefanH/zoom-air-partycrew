@@ -452,6 +452,7 @@ main #members .title p, main #booking .title p {
     margin-bottom: 30px;
     background: #181A1C;
     width: 100%;
+    display:none;
 }
 
 .thumbnail .more {
