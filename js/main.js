@@ -12,6 +12,13 @@ app.controller('zapc_members',['$scope', '$http', function($scope, $http){
     });
 }]);
 
+app.controller('zapc_gigs',['$scope', '$http', function($scope, $http){
+    var controller = this;
+    $http.get('php/gigs.php').then(function(response){
+        controller.gigs = response.data.records;
+    });
+}]);
+
 app.controller('scrollTopController', ['$document', function($document){
     this.icon = 'icon-up-open';
 
