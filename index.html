@@ -76,7 +76,7 @@
                     </ul>
                     <div id="single-projects" ng-controller="zapc_gigs as zapcgigs">
 
-                        <div ng-repeat="gig in zapcgigs.gigs" id="slidingDiv{{$index}}" class="toggleDiv singleGig">
+                        <div ng-repeat="gig in zapcgigs.gigs" id="slidingDiv{{gig.id}}" class="toggleDiv singleGig">
                             <div class="gigpic">
                                 <img src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
                             </div>
@@ -108,7 +108,7 @@
                             <li ng-repeat="gig in zapcgigs.gigs | filter:filters">
                                 <div class="thumbnail animated fadeInDown">
                                     <img src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
-                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv{{$index}}">
+                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv{{gig.id}}">
                                         <i class="icon-plus"></i>
                                     </a>
                                     <h3>{{gig.title}}</h3>
