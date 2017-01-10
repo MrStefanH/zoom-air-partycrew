@@ -67,171 +67,56 @@
                         <h1>Gigs</h1>
                         <p>Hier findest du Informationen zu unseren zukünftigen Veranstaltungen. Über die Filter kannst du leicht zwischen unserern eigenen Events und den Gigs unserer DJs wechseln.</p>
                     </div>
-                    <!--
+
                     <ul class="gignav">
-                        <li class="filter" data-filter="all"><a href="#noAction">Alle</a></li>
-                        <li class="filter" data-filter="events"><a href="#noAction">Events</a></li>
-                        <li class="filter" data-filter="dj"><a href="#noAction">DJs</a></li>
+                        <li class="filter" ng-click="filters = ''"><a href="#noAction">Alle</a></li>
+                        <li class="filter" ng-click="filters = 'event'"><a href="#noAction">Events</a></li>
+                        <li class="filter" ng-click="filters = 'dj'"><a href="#noAction">DJs</a></li>
                         <p style="clear:both;"></p>
                     </ul>
-                    <div id="single-projects">
-                        <div id="slidingDiv" class="toggleDiv singleGig">
+                    <div id="single-projects" ng-controller="zapc_gigs as zapcgigs">
+
+                        <div ng-repeat="gig in zapcgigs.gigs" id="slidingDiv{{$index}}" class="toggleDiv singleGig">
                             <div class="gigpic">
-                                <img src="img/logoZAPC.png" alt="07.05.2016 - NACHTCAFE Leipzig" />
+                                <img src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
                             </div>
                             <div class="gigtext">
                                 <div class="description">
                                     <div class="gigtitle clearfix">
-                                        <h3>Nachtcafe w/ SAGE</h3>
+                                        <h3>{{gig.title}}</h3>
                                         <span class="show_hide close">
                                             <i class="icon-cancel"></i>
                                         </span>
                                     </div>
                                     <div class="giginfo">
                                         <div>
-                                            <span>Wann: </span> 07.05.2016
+                                            <span>Wann: </span> {{gig.date | date : 'dd.MM.yyyy'}}
                                         </div>
                                         <div>
-                                            <span>Wo: </span> Nachtcafe Leipzig
+                                            <span>Wo: </span> {{gig.location}}
                                         </div>
                                         <div>
-                                            <span>Wer: </span> SAGE
+                                            <span>Wer: </span> {{gig.dj}}
                                         </div>
                                     </div>
-                                    <p>SAGE in einem der schönsten Clubs Leipzigs, dem Nachtcafe!</p>
-                                </div>
-                            </div>
-                            <p style="clear:both;"></p>
-                        </div>
-                        <div id="slidingDiv1" class="toggleDiv singleGig">
-                            <div class="gigpic">
-                                <img src="img/gig09.jpg" alt="14.05.2016 - 1. Saale-Sundown 2016 Bootsverleih Weissenfels" />
-                            </div>
-                            <div class="gigtext">
-                                <div class="description">
-                                    <div class="gigtitle clearfix">
-                                        <h3>1. Saale-Sundown 2016 w/ ROW-C</h3>
-                                        <span class="show_hide close">
-                                            <i class="icon-cancel"></i>
-                                        </span>
-                                    </div>
-                                    <div class="giginfo">
-                                        <div>
-                                            <span>Wann: </span> 07.05.2016
-                                        </div>
-                                        <div>
-                                            <span>Wo: </span> Bootsverleih Weissenfels <a href="https://www.facebook.com/events/1141550052552558/" target="_blank"><span style="display:block; float:right; font-size: 3em;" class="icon-facebook-circled"></span></a>
-                                        </div>
-                                        <div>
-                                            <span>Wer: </span> ROW-C
-                                        </div>
-                                    </div>
-                                    <p>Die Nächte werden wärmer und ROW C soll endlich wieder bei uns auflegen, also gehts zu Pfingsten bei uns los mit den chilligen House Abenden an der Saale....</p>
-                                </div>
-                            </div>
-                            <p style="clear:both;"></p>
-                        </div>
-                        <div id="slidingDiv2" class="toggleDiv singleGig">
-                            <div class="gigpic">
-                                <img src="img/logoZAPC.png" alt="15.05.2016 - Pfingstbier Schkortleben" />
-                            </div>
-                            <div class="gigtext">
-                                <div class="description">
-                                    <div class="gigtitle clearfix">
-                                        <h3>Pfingstbier Schkortleben</h3>
-                                        <span class="show_hide close">
-                                            <i class="icon-cancel"></i>
-                                        </span>
-                                    </div>
-                                    <div class="giginfo">
-                                        <div>
-                                            <span>Wann: </span> 15.05.2016
-                                        </div>
-                                        <div>
-                                            <span>Wo: </span> Schkortleben
-                                        </div>
-                                        <div>
-                                            <span>Wer: </span> ZAPC
-                                        </div>
-                                    </div>
-                                    <p>Tradition verbindet und so sind wir auch dieses Jahr am Pfingstsonntag zum Pfingstbier in Schkortleben, um mit euch zu feiern.</p>
-                                </div>
-                            </div>
-                            <p style="clear:both;"></p>
-                        </div>
-                        <div id="slidingDiv3" class="toggleDiv singleGig">
-                            <div class="gigpic">
-                                <img src="img/logoZAPC.png" alt="15.05.2016 - Pfingstbier Schkortleben" />
-                            </div>
-                            <div class="gigtext">
-                                <div class="description">
-                                    <div class="gigtitle clearfix">
-                                        <h3>Eierbetteln</h3>
-                                        <span class="show_hide close">
-                                            <i class="icon-cancel"></i>
-                                        </span>
-                                    </div>
-                                    <div class="giginfo">
-                                        <div>
-                                            <span>Wann: </span> 21.05.2016
-                                        </div>
-                                        <div>
-                                            <span>Wo: </span> Markwerben
-                                        </div>
-                                        <div>
-                                            <span>Wer: </span> ZAPC
-                                        </div>
-                                    </div>
+                                    <p>{{gig.description}}</p>
                                 </div>
                             </div>
                             <p style="clear:both;"></p>
                         </div>
                         <ul class="thumbnails" id="gig-list">
-                            <li class="mix mix_all dj">
+                            <li ng-repeat="gig in zapcgigs.gigs | filter:filters">
                                 <div class="thumbnail animated fadeInDown">
-                                    <img src="img/logoZAPC.png" alt="07.05.2016 - NACHTCAFE Leipzig" />
-                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv">
+                                    <img src="{{gig.gig_image}}" alt="{{gig.alternative_text}}" />
+                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv{{$index}}">
                                         <i class="icon-plus"></i>
                                     </a>
-                                    <h3>Nachtcafe w/ SAGE</h3>
-                                    <p>07.05.2016 Nachtcafe Leipzig</p>
+                                    <h3>{{gig.title}}</h3>
+                                    <p>{{gig.date | date : 'dd.MM.yyyy'}} {{gig.location}}</p>
                                     <div class="mask"></div>
                                 </div>
                             </li>
-                            <li class="mix mix_all dj">
-                                <div class="thumbnail animated fadeInDown">
-                                    <img src="img/gig09.jpg" alt="14.05.2016 - 1. Saale-Sundown 2016 Bootsverleih Weissenfels" />
-                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv1">
-                                        <i class="icon-plus"></i>
-                                    </a>
-                                    <h3>1. Saale-Sundown 2016 w/ ROW-C</h3>
-                                    <p>14.05.2016 Bootsverleih Weissenfels</p>
-                                    <div class="mask"></div>
-                                </div>
-                            </li>
-                            <li class="mix mix_all events">
-                                <div class="thumbnail animated fadeInDown">
-                                    <img src="img/logoZAPC.png" alt="15.05.2016 - Pfingstbier Schkortleben" />
-                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv2">
-                                        <i class="icon-plus"></i>
-                                    </a>
-                                    <h3>Pfingstbier Schkortleben</h3>
-                                    <p>15.05.2016 Schkortleben</p>
-                                    <div class="mask"></div>
-                                </div>
-                            </li>
-                            <li class="mix mix_all events">
-                                <div class="thumbnail animated fadeInDown">
-                                    <img src="img/logoZAPC.png" alt="21.05.2016 - Eierbetteln in Markwerben" />
-                                    <a href="#single-projects" class="more show_hide" rel="#slidingDiv3">
-                                        <i class="icon-plus"></i>
-                                    </a>
-                                    <h3>Eierbetteln</h3>
-                                    <p>21.05.2016 Markwerben</p>
-                                    <div class="mask"></div>
-                                </div>
-                            </li>
-                        </ul>-->
+                        </ul>
                     </div>
                 </div>
             </section>
